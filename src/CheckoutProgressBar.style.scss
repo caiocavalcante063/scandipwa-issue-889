@@ -1,3 +1,37 @@
+@keyframes fadeToPrimary {
+  from {
+    background: var(--secondary-dark-color);
+    opacity: 0.3;
+  }
+
+  to {
+    background: var(--primary-base-color);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeToSecondary {
+  from {
+    color: var(--body-content-color);
+    opacity: 0.3;
+  }
+
+  to {
+    color: var(--secondary-base-color);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeToBodyContent {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .progress-bar-wrapper {
   align-items: center;
   display: flex;
@@ -6,30 +40,42 @@
   width: 100%;
 
   .bar-progress-checkout {
-    background: var(--primary-base-color);
+    background: var(--secondary-dark-color);
     border-radius: 2px;
     height: 4px;
-    margin: 0 4px;
+    opacity: 0.3;
     width: 100%;
+
+    &-filled {
+      animation-name: fadeToPrimary;
+      animation-duration: 2.5s;
+      background: var(--primary-base-color);
+      border-radius: 2px;
+      height: 4px;
+      opacity: 1;
+      width: 100%;
+    }
   }
 
   .dot-progress-checkout {
     display: flex;
     height: 20px;
     justify-content: center;
-    width: 30px;
+    width: 35px;
 
     .dot-progress-pin {
-      background: var(--primary-base-color);
+      background: var(--secondary-dark-color);
       border-radius: 50%;
       height: 20px;
+      opacity: 0.3;
       position: absolute;
       width: 20px;
     }
 
     .dot-progress-pin-number {
       bottom: 3px;
-      color: var(--secondary-base-color);
+      color: var(--body-content-color);
+      opacity: 0.3;
       position: absolute;
     }
 
@@ -38,7 +84,46 @@
       font-size: 13px;
       font-weight: 800;
       margin-top: 28px;
+      opacity: 0.3;
       text-align: center;
+    }
+
+    &-filled {
+      display: flex;
+      height: 20px;
+      justify-content: center;
+      width: 35px;
+
+      .dot-progress-pin-filled {
+        animation-name: fadeToPrimary;
+        animation-duration: 2.5s;
+        background: var(--primary-base-color);
+        border-radius: 50%;
+        height: 20px;
+        opacity: 1;
+        position: absolute;
+        width: 20px;
+      }
+
+      .dot-progress-pin-number-filled {
+        animation-name: fadeToSecondary;
+        animation-duration: 2.5s;
+        bottom: 3px;
+        color: var(--secondary-base-color);
+        opacity: 1;
+        position: absolute;
+      }
+
+      .dot-progress-pin-title-filled {
+        animation-name: fadeToBodyContent;
+        animation-duration: 2.5s;
+        color: var(--body-content-color);
+        font-size: 13px;
+        font-weight: 800;
+        margin-top: 28px;
+        opacity: 1;
+        text-align: center;
+      }
     }
   }
 }
