@@ -30,8 +30,8 @@
 
     createProgressBarElements(customClass, progressLimiter) {
       const { stepsNumber, steps } = this.props;
-      // if the number of steps is less than 3, progressbar is not useful
-      if ( stepsNumber < 3 ) return null;
+      // if the number of steps is less than 2, progressbar is not useful
+      if ( stepsNumber < 2 ) return null;
 
       const stepsArr = [];
       let totalSteps = stepsNumber + (stepsNumber - 1);
