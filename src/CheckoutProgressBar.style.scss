@@ -1,0 +1,44 @@
+.progress-bar-wrapper {
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: -55px;
+  width: 100%;
+
+  .bar-progress-checkout {
+    background: var(--primary-base-color);
+    border-radius: 2px;
+    height: 4px;
+    margin: 0 4px;
+    width: 100%;
+  }
+
+  .dot-progress-checkout {
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    width: 30px;
+
+    .dot-progress-pin {
+      background: var(--primary-base-color);
+      border-radius: 50%;
+      height: 20px;
+      position: absolute;
+      width: 20px;
+    }
+
+    .dot-progress-pin-number {
+      bottom: 3px;
+      color: var(--secondary-base-color);
+      position: absolute;
+    }
+
+    .dot-progress-pin-title {
+      color: var(--body-content-color);
+      font-size: 13px;
+      font-weight: 800;
+      margin-top: 28px;
+      text-align: center;
+    }
+  }
+}
